@@ -6,7 +6,7 @@ import { useFireAuth } from "../FireAuthContext";
 import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
-  const { signOut } = useFireAuth();
+  const { handleSignOut } = useFireAuth();
   const navigate = useNavigate();
   return (
     <Box
@@ -21,7 +21,7 @@ export const Home = () => {
         variant="outlined"
         color="primary"
         onClick={async () => {
-          await signOut();
+          await handleSignOut();
           navigate("/login");
         }}
       >

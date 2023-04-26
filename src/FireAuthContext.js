@@ -30,9 +30,9 @@ export const FireAuthProvider = ({ children }) => {
     }
   };
 
-  const signOut = async () => {
+  const handleSignOut = async () => {
     try {
-      await signOut();
+      await signOut(auth);
     } catch (error) {
       console.error("Error signing out:", error);
     }
@@ -41,7 +41,7 @@ export const FireAuthProvider = ({ children }) => {
   const value = {
     user,
     signInWithGoogle,
-    signOut,
+    handleSignOut,
     loading,
   };
 
